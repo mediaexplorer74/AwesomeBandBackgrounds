@@ -32,8 +32,8 @@ The ultimate Microsoft Band companion app. Access millions of amazing, high defi
 However, if you want to actually run and use this app from code (instead of installing from the Store), you will need to get your own API keys with the various services. These values are set in the various constants files in the src/BandCentral.Models/Secrets folder."
 
 ## References
-- https://github.com/LanceMcCarthy/ GitHub Page of Lance McCarthy, great developer 
-- https://github.com/LanceMcCarthy/Lancelot.AwesomeBandBackgrounds/ Original AwesomeBandBackgrounds app
+- https://github.com/LanceMcCarthy GitHub Page of Lance McCarthy, great developer 
+- https://github.com/LanceMcCarthy/Lancelot.AwesomeBandBackgrounds Original AwesomeBandBackgrounds
 
 ## .. 
 AS IS. No support. RnD only.
