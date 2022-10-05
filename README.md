@@ -17,11 +17,7 @@ The ultimate Microsoft Band companion app. Access millions of amazing, high defi
 - Stylish Themes:
 - Pick your theme colors from professional palettes
 - Theme History to quickly set any past themes you want to use again
-- Image sources: Millions of photos at your fingertips in an infinite scrolling list from a variety of available sources:
-- Flicker
-- 500px
-- Bing
-- OneDrive
+- Image sources: Millions of photos at your fingertips in an infinite scrolling list from a variety of available sources: Flicker, 500px, Bing, OneDrive
 - Local files on your phone
 - Preview: Get an instant preview of how image looks on your band before you apply it
 - Effects: Crop and apply dozens of amazing effects to photos
@@ -30,7 +26,7 @@ The ultimate Microsoft Band companion app. Access millions of amazing, high defi
 - Background Updates: The background task can update the image automatically for you
 - Backups: Cloud backup and restore favorites from cloud
 
-##Developer (Lance McCarthy) Note
+## Developer (Lance McCarthy) Note
 "Lance McCarthy have open sourced this to give back to the community the hundreds and hundreds of hours of work over the years. From custom controls, to UI features, these are available in the source in the src/ subfolder. You can compile the projects locally and interact with everything in the VS 2022 designer. While preparing this for open source, I have put a lot of recent work into compatibility with modern tools.
 
 However, if you want to actually run and use this app from code (instead of installing from the Store), you will need to get your own API keys with the various services. These values are set in the various constants files in the src/BandCentral.Models/Secrets folder."
