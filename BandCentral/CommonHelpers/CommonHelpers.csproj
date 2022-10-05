@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Lance McCarthy</Authors>
+    <Company>Lancelot Software, LLC</Company>
+    <Description>A small library containing frequently reused classes, infrustructure and data services to help build reliable demo applications faster.</Description>
+    <PackageReleaseNotes>Review releases on GitHub at bit.ly/CommonHelpers</PackageReleaseNotes>
+    <RepositoryType>GitHub</RepositoryType>
+    <PackageProjectUrl>https://github.com/LanceMcCarthy/CommonHelpers</PackageProjectUrl>
+    <PackageLicenseUrl></PackageLicenseUrl>
+    <Copyright>Copyright 2018 - 2022</Copyright>
+    <PackageIconUrl></PackageIconUrl>
+    <RepositoryUrl>https://github.com/LanceMcCarthy/CommonHelpers</RepositoryUrl>
+    <PackageTags>NetStandard C# netstandard2.0 netstandard netcore</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <AssemblyVersion>1.2.0.0</AssemblyVersion>
+    <Version>1.2.0</Version>
+    <FileVersion>1.2.0.0</FileVersion>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageIcon>CommonHelpersIcon.png</PackageIcon>
+    <SignAssembly>false</SignAssembly>
+    <DelaySign>false</DelaySign>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="CommonHelpersIcon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
