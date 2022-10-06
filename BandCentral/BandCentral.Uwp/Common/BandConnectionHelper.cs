@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Windows.ApplicationModel;
 using Windows.UI.Popups;
 using Microsoft.Band;
-using Microsoft.HockeyApp;
+//using Microsoft.HockeyApp;
 
 namespace BandCentral.Uwp.Common
 {
@@ -36,7 +36,7 @@ namespace BandCentral.Uwp.Common
             }
             catch (BandException ex)
             {
-                HockeyClient.Current.TrackException(ex);
+                //HockeyClient.Current.TrackException(ex);
                 Debug.WriteLine($"Band Connection Exception: {ex.Message}");
                 
                 await BandExceptionMessageDialog(ex, "FindPairedBandsAsync").ShowAsync();
@@ -45,7 +45,7 @@ namespace BandCentral.Uwp.Common
             }
             catch (Exception ex)
             {
-                HockeyClient.Current.TrackException(ex);
+                //HockeyClient.Current.TrackException(ex);
                 await new MessageDialog($"BandConnectionHelper.FindPairedBandsAsync() Exception \r\n\nMessage: {ex.Message}").ShowAsync();
                 return null;
             }
@@ -82,7 +82,8 @@ namespace BandCentral.Uwp.Common
             }
             catch (BandException ex)
             {
-                HockeyClient.Current.TrackException(ex);
+                
+                //HockeyClient.Current.TrackException(ex);                
                 await BandExceptionMessageDialog(ex, "RefreshCurrentBandInfo").ShowAsync();
                 //var message = $"This error can occur for several different reasons, check to make sure your Band:" +
                 //              "\r\n\n-Is powered on" +
@@ -96,7 +97,7 @@ namespace BandCentral.Uwp.Common
             }
             catch (Exception ex)
             {
-                HockeyClient.Current.TrackException(ex);
+                //HockeyClient.Current.TrackException(ex);
                 await new MessageDialog($"BandConnectionHelper.RefreshCurrentBandInfo() Exception \r\n\nMessage: {ex.Message}").ShowAsync();
                 return null;
             }

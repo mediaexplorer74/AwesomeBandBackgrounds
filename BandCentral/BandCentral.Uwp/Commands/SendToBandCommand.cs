@@ -3,7 +3,7 @@ using BandCentral.Models.Helpers;
 using FlickrNet;
 using Lumia.Imaging;
 using Lumia.Imaging.Transforms;
-using Microsoft.HockeyApp;
+//using Microsoft.HockeyApp;
 using System;
 using System.IO;
 using System.Net;
@@ -96,13 +96,13 @@ namespace BandCentral.Uwp.Commands
                     await renderer.RenderAsync();
                 }
                 
-                HockeyClient.Current.TrackEvent($"SendToBandCommand");
+                //HockeyClient.Current.TrackEvent($"SendToBandCommand");
 
                 return outputWriteableBitmap;
             }
             catch (Exception ex)
             {
-                HockeyClient.Current.TrackException(ex);
+                //HockeyClient.Current.TrackException(ex);
 
                 await new MessageDialog($"Sorry, there was a problem cropping the image. It may be too small to put on the Band. Error: {ex}").ShowAsync();
                 return null;
@@ -125,7 +125,7 @@ namespace BandCentral.Uwp.Commands
             }
             catch (Exception ex)
             {
-                HockeyClient.Current.TrackException(ex);
+                //HockeyClient.Current.TrackException(ex);
                 await new MessageDialog("Sorry, there was a problem cropping the image: " + ex).ShowAsync();
             }
             finally

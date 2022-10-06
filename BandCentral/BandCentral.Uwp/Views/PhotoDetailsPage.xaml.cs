@@ -7,7 +7,7 @@ using BandCentral.Models.Helpers;
 using BandCentral.Uwp.Common;
 using Lumia.Imaging;
 using Lumia.Imaging.Transforms;
-using Microsoft.HockeyApp;
+//using Microsoft.HockeyApp;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -85,7 +85,7 @@ namespace BandCentral.Uwp.Views
             if (DesignMode.DesignModeEnabled)
                 return;
 
-            HockeyClient.Current.TrackPageView("PhotoDetailsPage");
+            //HockeyClient.Current.TrackPageView("PhotoDetailsPage");
 
             localSettings = ApplicationData.Current.LocalSettings;
 
@@ -155,7 +155,7 @@ namespace BandCentral.Uwp.Views
             metrics.Add("FilterName", item.Title);
             metrics.Add("PageUsedOn", "PhotoDetailsPage");
 
-            HockeyClient.Current.TrackEvent("FilterApplied", metrics);
+            //HockeyClient.Current.TrackEvent("FilterApplied", metrics);
         }
 
         private async void CropImageButton_Click(object sender, RoutedEventArgs e)

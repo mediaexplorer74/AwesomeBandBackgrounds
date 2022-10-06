@@ -10,7 +10,7 @@ using BandCentral.Uwp.Common;
 using BandCentral.Uwp.ViewModels;
 using Lumia.Imaging;
 using Lumia.Imaging.Transforms;
-using Microsoft.HockeyApp;
+//using Microsoft.HockeyApp;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -76,7 +76,7 @@ namespace BandCentral.Uwp.Views
             if (DesignMode.DesignModeEnabled)
                 return;
 
-            HockeyClient.Current.TrackPageView("PhotoSearchPage");
+            //HockeyClient.Current.TrackPageView("PhotoSearchPage");
 
             localSettings = ApplicationData.Current.LocalSettings;
 
@@ -214,7 +214,7 @@ namespace BandCentral.Uwp.Views
                     {
                         App.ViewModel.FlickrFavs.Remove(fav);
                         await App.ViewModel.SaveFavoritesJsonAsync();
-                        HockeyClient.Current.TrackEvent("FavoriteRemoved");
+                        //HockeyClient.Current.TrackEvent("FavoriteRemoved");
 
                         FavsButton.Icon = new SymbolIcon(Symbol.Favorite);
                     }));
@@ -268,14 +268,15 @@ namespace BandCentral.Uwp.Views
                     //FavsButton.Icon = isPresent == null ? new SymbolIcon(Symbol.Favorite) : new SymbolIcon(Symbol.UnFavorite);
                     FavsButton.Icon = new SymbolIcon(Symbol.UnFavorite);
 
-                    HockeyClient.Current.TrackEvent("FavoriteAdded");
+                    //HockeyClient.Current.TrackEvent("FavoriteAdded");
                 }
 
                 FavsButton.IsEnabled = true;
             }
             catch (Exception ex)
             {
-                HockeyClient.Current.TrackException(ex);
+                //HockeyClient.Current.TrackException(ex);
+                Debug.WriteLine("[ex] Exception : " + ex.Message);
             }
             finally
             {
@@ -312,7 +313,7 @@ namespace BandCentral.Uwp.Views
             var metrics = new Dictionary<string, string>();
             metrics.Add("PageUsedOn", "PhotoSearchPage");
 
-            HockeyClient.Current.TrackEvent("SendImageToBand", metrics);
+            //HockeyClient.Current.TrackEvent("SendImageToBand", metrics);
         }
 
         private void EditButton_OnClick(object sender, RoutedEventArgs e)
@@ -335,7 +336,7 @@ namespace BandCentral.Uwp.Views
 
             var metrics = new Dictionary<string, string>();
             metrics.Add("SearchTerm", FlickrViewModel.SearchTerm.ToLowerInvariant());
-            HockeyClient.Current.TrackEvent("FlickrSearchPerformed", metrics);
+            //HockeyClient.Current.TrackEvent("FlickrSearchPerformed", metrics);
 
             if (IsPreviewGridVisible)
             {
@@ -436,7 +437,7 @@ namespace BandCentral.Uwp.Views
             }
             catch (Exception ex)
             {
-                HockeyClient.Current.TrackException(ex);
+                //HockeyClient.Current.TrackException(ex);
                 await new MessageDialog($"Sorry, there was a problem cropping the image. It may be too small to put on the Band. Error: {ex.Message}").ShowAsync();
                 return null;
             }
@@ -447,7 +448,7 @@ namespace BandCentral.Uwp.Views
                 
                 var properties = new Dictionary<string, string>();
                 properties.Add("PageUsedOn", "PhotoSearchPage");
-                HockeyClient.Current.TrackEvent("DownloadAndCropAsync", properties);
+                //HockeyClient.Current.TrackEvent("DownloadAndCropAsync", properties);
             }
         }
 

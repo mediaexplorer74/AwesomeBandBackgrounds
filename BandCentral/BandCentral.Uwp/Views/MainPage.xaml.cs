@@ -6,7 +6,7 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 using BandCentral.Uwp.Behaviors;
 using BandCentral.Uwp.Dialogs;
-using Microsoft.HockeyApp;
+//using Microsoft.HockeyApp;
 using Microsoft.Xaml.Interactivity;
 
 namespace BandCentral.Uwp.Views
@@ -18,7 +18,7 @@ namespace BandCentral.Uwp.Views
             this.InitializeComponent();
             DataContext = App.ViewModel;
 
-            HockeyClient.Current.TrackPageView("MainPage");
+            //HockeyClient.Current.TrackPageView("MainPage");
 
             if (DesignMode.DesignModeEnabled) return;
 

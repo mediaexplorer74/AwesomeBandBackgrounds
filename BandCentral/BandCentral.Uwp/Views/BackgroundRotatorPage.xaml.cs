@@ -28,7 +28,7 @@ using BandCentral.Models.Secrets;
 using BandCentral.Uwp.Common;
 using Lumia.Imaging;
 using Lumia.Imaging.Transforms;
-using Microsoft.HockeyApp;
+//using Microsoft.HockeyApp;
 using Photo = FlickrNet.Photo;
 
 namespace BandCentral.Uwp.Views
@@ -403,7 +403,7 @@ namespace BandCentral.Uwp.Views
             }
             catch (Exception ex)
             {
-                HockeyClient.Current.TrackException(ex);
+                //HockeyClient.Current.TrackException(ex);
                 await new MessageDialog($"Sorry, there was a problem cropping the image. It may be too small to put on the Band. Error: {ex.Message}").ShowAsync();
                 return null;
             }

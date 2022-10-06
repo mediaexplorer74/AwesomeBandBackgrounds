@@ -4,9 +4,13 @@ Echo / fork of 10-years [AwesomeBandBackgrounds](https://github.com/LanceMcCarth
 ## About
 The ultimate Microsoft Band companion app. Access millions of amazing, high definition wallpaper photos and dozens of professional palette-based themes.
 
+## Screenshots
+![Desktop](Images/shot1.png)
+
 ## Status
-- Reverse Engeneering
-- Planning to transform dll-depandent code to real multi-platform (W10 / W10M; PC / Mobile) 
+- Reverse Engeneering +-
+- Planning to transform dll-depandent code to real multi-platform (W10 / W10M; PC / Mobile) +-
+- Dev +- 
 
 ## Installation Options
 - [Microsoft Store](https://www.microsoft.com/en-us/p/awesome-band-backgrounds/9nblggh3g0sn)
@@ -34,6 +38,9 @@ However, if you want to actually run and use this app from code (instead of inst
 ## References
 - https://github.com/LanceMcCarthy GitHub Page of Lance McCarthy, great developer 
 - https://github.com/LanceMcCarthy/Lancelot.AwesomeBandBackgrounds Original AwesomeBandBackgrounds
+- https://www.youtube.com/watch?v=1Qu8rB8z3lA Awesome Band Backgrounds * You-tube video (Mark Guim, WindowsCentral)
+- https://www.windowscentral.com/awesome-band-backgrounds Awesome Band Backgrounds * article; May 13, 2015 (Mark Guim)
+- https://gadgetshelp.com/windows/awesome-band-backgrounds-obnovleny-s-podderzhkoi-band-2-do-sikh-por-predlagaet-mnozhestvo-oboev-band/ * article (in Russian)
 
 ## .. 
 AS IS. No support. RnD only.

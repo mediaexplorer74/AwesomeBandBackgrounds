@@ -8,7 +8,7 @@ using BandCentral.Models.Pictalicious;
 using BandCentral.Uwp.Controls.ImageCropper.Helpers;
 using Lumia.Imaging;
 using Lumia.Imaging.Transforms;
-using Microsoft.HockeyApp;
+//using Microsoft.HockeyApp;
 using Newtonsoft.Json;
 using System;
 using System.IO;
@@ -93,7 +93,7 @@ namespace BandCentral.Uwp.Dialogs
             this.ThemesRoot = JsonConvert.DeserializeObject<PictaliciousRoot>(json);
 
             //App.TelemetryClient.TrackEvent("GetImageBasedTheme");
-            HockeyClient.Current.TrackEvent("SendToBandCommand");
+            //HockeyClient.Current.TrackEvent("SendToBandCommand");
         }
 
         private async Task<WriteableBitmap> DownloadAndCropImageAsync(FlickrNet.Photo photo)
@@ -148,7 +148,7 @@ namespace BandCentral.Uwp.Dialogs
             }
             catch (Exception ex)
             {
-                HockeyClient.Current.TrackException(ex);
+                //HockeyClient.Current.TrackException(ex);
                 await new MessageDialog($"Sorry, there was a problem cropping the image. It may be too small to put on the Band. Error: {ex}").ShowAsync();
                 return null;
             }

@@ -11,7 +11,7 @@ using BandCentral.Uwp.Controls.ImageCropper.Helpers;
 using Lumia.Imaging;
 using Microsoft.Graphics.Canvas;
 using Microsoft.Graphics.Canvas.Effects;
-using Microsoft.HockeyApp;
+//using Microsoft.HockeyApp;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -63,7 +63,7 @@ namespace BandCentral.Uwp.Views
             this.InitializeComponent();
             DataContext = App.ViewModel;
 
-            HockeyClient.Current.TrackPageView(nameof(PairedThemePage));
+            //HockeyClient.Current.TrackPageView(nameof(PairedThemePage));
         }
 
         #region Event handlers
@@ -130,7 +130,7 @@ namespace BandCentral.Uwp.Views
 
         private async void RegeneratePalettesButton_OnClick(object sender, RoutedEventArgs e)
         {
-            HockeyClient.Current.TrackEvent("RegeneratePalettes");
+            //HockeyClient.Current.TrackEvent("RegeneratePalettes");
 
             await GenerateSwatchesAsync(App.ViewModel.SelectedFav?.Photo);
         }
@@ -166,7 +166,7 @@ namespace BandCentral.Uwp.Views
                 App.ViewModel.IsBusy = false;
                 App.ViewModel.IsBusyMessage = "";
 
-                HockeyClient.Current.TrackEvent("FavThemeSaved");
+                //HockeyClient.Current.TrackEvent("FavThemeSaved");
             }
         }
 
@@ -178,7 +178,7 @@ namespace BandCentral.Uwp.Views
 
                 var properties = new Dictionary<string, string>();
                 properties.Add("PageUsedOn", "ImageSwatchTest");
-                HockeyClient.Current.TrackEvent("SetTheme", properties);
+                //HockeyClient.Current.TrackEvent("SetTheme", properties);
             }
         }
 
@@ -240,14 +240,14 @@ namespace BandCentral.Uwp.Views
                 metrics.Add("Kuler_themes", pictaliciousResult.Kuler_themes.Count);
                 metrics.Add("Cl_themes", pictaliciousResult.Cl_themes.Count);
 
-                HockeyClient.Current.TrackEvent("GenerateSwatchesAsync", properties, metrics);
+                //HockeyClient.Current.TrackEvent("GenerateSwatchesAsync", properties, metrics);
 
                 //save results to a local json file using the photoID so we wont have to do another API call again
                 await SaveGeneratedPalettesAsync(list, photo);
             }
             catch (Exception ex)
             {
-                HockeyClient.Current.TrackException(ex);
+                //HockeyClient.Current.TrackException(ex);
             }
         }
 
@@ -346,7 +346,7 @@ namespace BandCentral.Uwp.Views
 
                 var properties = new Dictionary<string, string>();
                 properties.Add("PageUsedOn", "ImageSwatchTest");
-                HockeyClient.Current.TrackEvent("DownloadAndCropAsync", properties);
+                //HockeyClient.Current.TrackEvent("DownloadAndCropAsync", properties);
             }
         }
 
@@ -497,7 +497,8 @@ namespace BandCentral.Uwp.Views
             }
             catch (Exception ex)
             {
-                HockeyClient.Current.TrackException(ex);
+                //HockeyClient.Current.TrackException(ex);
+                Debug.WriteLine("[ex] Exception : " + ex.Message);
             }
             finally
             {
@@ -530,7 +531,8 @@ namespace BandCentral.Uwp.Views
             }
             catch (Exception ex)
             {
-                HockeyClient.Current.TrackException(ex);
+                //HockeyClient.Current.TrackException(ex);
+                Debug.WriteLine("[ex] Exception : " + ex.Message);
                 return null;
             }
             finally

@@ -11,7 +11,7 @@ using BandCentral.UwpBackgroundTasks;
 using Lumia.Imaging;
 using Lumia.Imaging.Transforms;
 using Lumia.InteropServices.WindowsRuntime;
-using Microsoft.HockeyApp;
+//using Microsoft.HockeyApp;
 using System;
 using System.Diagnostics;
 using System.Globalization;
@@ -56,7 +56,7 @@ namespace BandCentral.Uwp.Views
 
             localSettings = ApplicationData.Current.LocalSettings;
 
-            HockeyClient.Current.TrackPageView("BingImagePage");
+            //HockeyClient.Current.TrackPageView("BingImagePage");
         }
 
         #region button and selection event handlers
@@ -157,7 +157,7 @@ namespace BandCentral.Uwp.Views
             {
                 var successful = await ConfigureBackgroundTaskAsync();
 
-                HockeyClient.Current.TrackEvent(successful ? "BingBackgroundTaskEnabled" : "BingBackgroundTaskFailed");
+                //HockeyClient.Current.TrackEvent(successful ? "BingBackgroundTaskEnabled" : "BingBackgroundTaskFailed");
             }
             else
             {
@@ -315,7 +315,7 @@ namespace BandCentral.Uwp.Views
                 if (await BackgroundTaskEngine.UnregisterTaskAsync(BingConstants.BingTaskName))
                 {
                     UpdateStatus("Background task was removed!", false);
-                    HockeyClient.Current.TrackEvent("BingBackgroundTaskDisabled");
+                    //HockeyClient.Current.TrackEvent("BingBackgroundTaskDisabled");
                 }
 
                 selectionMute = false;
@@ -370,7 +370,7 @@ namespace BandCentral.Uwp.Views
                 if (await ConfigureBackgroundTaskAsync())
                 {
                     await new MessageDialog("Your Bing Image of the day task has been refreshed!\r\n\n", "refreshed!").ShowAsync();
-                    HockeyClient.Current.TrackEvent("BingBackgroundTaskRefreshed");
+                    //HockeyClient.Current.TrackEvent("BingBackgroundTaskRefreshed");
                 }
             }
 

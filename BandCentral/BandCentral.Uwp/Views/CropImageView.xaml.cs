@@ -5,7 +5,7 @@
 using BandCentral.Models.Common;
 using BandCentral.Uwp.Common;
 using BandCentral.Uwp.Controls.ImageCropper.Helpers;
-using Microsoft.HockeyApp;
+//using Microsoft.HockeyApp;
 using System;
 using System.Threading.Tasks;
 using Windows.Storage;
@@ -28,7 +28,7 @@ namespace BandCentral.Uwp.Views
             this.InitializeComponent();
             DataContext = App.ViewModel;
 
-            HockeyClient.Current.TrackPageView("CropImageView");
+            //HockeyClient.Current.TrackPageView("CropImageView");
         }
 
         private async void OpenButton_Click(object sender, RoutedEventArgs e)

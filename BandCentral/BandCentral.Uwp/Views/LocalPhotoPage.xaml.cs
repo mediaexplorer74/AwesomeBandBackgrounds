@@ -7,7 +7,7 @@ using BandCentral.Models.Helpers;
 using BandCentral.Uwp.Common;
 using Lumia.Imaging;
 using Lumia.Imaging.Transforms;
-using Microsoft.HockeyApp;
+//using Microsoft.HockeyApp;
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -80,7 +80,7 @@ namespace BandCentral.Uwp.Views
             this.InitializeComponent();
             DataContext = App.ViewModel;
 
-            HockeyClient.Current.TrackPageView("LocalPhotoPage");
+            //HockeyClient.Current.TrackPageView("LocalPhotoPage");
 
             if (DesignMode.DesignModeEnabled) return;
             localSettings = ApplicationData.Current.LocalSettings;
@@ -164,7 +164,7 @@ namespace BandCentral.Uwp.Views
                             (int)CropRect.Width,
                             (int)loadedSize.Height);
 
-                        HockeyClient.Current.TrackEvent("LocalPhotoFilePicked");
+                        //HockeyClient.Current.TrackEvent("LocalPhotoFilePicked");
                     }
 
                     if (baseWriteableBitmap == null)

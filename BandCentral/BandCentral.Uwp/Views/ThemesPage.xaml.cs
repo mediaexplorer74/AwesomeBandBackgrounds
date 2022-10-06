@@ -3,7 +3,7 @@
 // https://github.com/LanceMcCarthy/Lancelot.AwesomeBandBackgrounds
 
 using BandCentral.Models.Common;
-using Microsoft.HockeyApp;
+//using Microsoft.HockeyApp;
 using System;
 using System.Collections.Generic;
 using Telerik.UI.Xaml.Controls.Data;
@@ -54,7 +54,7 @@ namespace BandCentral.Uwp.Views
             this.InitializeComponent();
             DataContext = App.ViewModel;
 
-            HockeyClient.Current.TrackPageView("ThemesPage");
+            //HockeyClient.Current.TrackPageView("ThemesPage");
 
             if (roamingSettings != null && roamingSettings.Values.TryGetValue("AreColorsLinked", out var obj))
             {
@@ -89,7 +89,7 @@ namespace BandCentral.Uwp.Views
 
             var properties = new Dictionary<string, string>();
             properties.Add("PageUsedOn", "ThemesPage");
-            HockeyClient.Current.TrackEvent("SetTheme", properties);
+            //HockeyClient.Current.TrackEvent("SetTheme", properties);
         }
 
         private async void ResetThemeAppBarButton_OnClick(object sender, RoutedEventArgs e)
@@ -101,7 +101,7 @@ namespace BandCentral.Uwp.Views
         private async void ClearThemeHistoryButton_OnClick(object sender, RoutedEventArgs e)
         {
             await App.ViewModel.ClearThemeHistoryAsync();
-            HockeyClient.Current.TrackEvent("ClearThemeHistory");
+            //HockeyClient.Current.TrackEvent("ClearThemeHistory");
         }
 
         private void LinkUnlinkAppBarButton_OnClick(object sender, RoutedEventArgs e)
@@ -139,7 +139,7 @@ namespace BandCentral.Uwp.Views
                     break;
             }
 
-            HockeyClient.Current.TrackEvent("ColorPickerUsed");
+            //HockeyClient.Current.TrackEvent("ColorPickerUsed");
 
             Picker.Visibility = Visibility.Collapsed;
         }

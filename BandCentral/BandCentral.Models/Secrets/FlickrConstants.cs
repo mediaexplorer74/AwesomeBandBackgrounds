@@ -10,8 +10,8 @@
 
         //flickr
         public const string ApiKey = "";
-        public const string WindowsDevFlickrApiKey = "";
-        public const string WindowsDevFlickrSharedSecret = "";
+        public const string WindowsDevFlickrApiKey = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"; // paste your api key here
+        public const string WindowsDevFlickrSharedSecret = "xxxxxxxxxxxxxxxxxxxxxxx"; // paste your secret here
         public const string BaseUrl = "https://api.flickr.com/services/rest/";
         public const string Method = "flickr.photos.getRecent";
         public const string Format = "json";

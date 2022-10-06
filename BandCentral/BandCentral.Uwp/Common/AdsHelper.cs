@@ -5,10 +5,11 @@ using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Windows.UI.Popups;
 using CommonHelpers.Common;
-using Microsoft.Advertising.WinRT.UI;
+//using Microsoft.Advertising.WinRT.UI;
 
 namespace BandCentral.Uwp.Common
 {
+    /*
     public class AdsHelper : BindableBase
     {
         private InterstitialAd myVideoAd;
@@ -95,4 +96,5 @@ namespace BandCentral.Uwp.Common
 
         #endregion
     }
+    */
 }

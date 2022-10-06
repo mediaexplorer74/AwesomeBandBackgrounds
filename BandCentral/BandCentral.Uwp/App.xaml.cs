@@ -2,7 +2,7 @@
 using BandCentral.Models.Helpers;
 using BandCentral.Uwp.ViewModels;
 using BandCentral.Uwp.Views;
-using Microsoft.HockeyApp;
+//using Microsoft.HockeyApp;
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -63,14 +63,24 @@ namespace BandCentral.Uwp
         public App()
         {
 
-            HockeyClient.Current.Configure(
-                    GeneralConstants.HockeyAppClientId,
+            /*
+            HockeyClient.Current.Configure
+            (
+                GeneralConstants.HockeyAppClientId,
                 new TelemetryConfiguration
                 {
-                    Collectors = WindowsCollectors.Metadata | WindowsCollectors.Session | WindowsCollectors.UnhandledException,
+                    Collectors = WindowsCollectors.Metadata 
+                                | WindowsCollectors.Session 
+                                | WindowsCollectors.UnhandledException,
                     EnableDiagnostics = true
-                })
-                .SetExceptionDescriptionLoader(exception => "Exception HResult: " + exception.HResult.ToString());
+                }
+            )
+            .SetExceptionDescriptionLoader
+            (
+                  exception => 
+                  "Exception HResult: " + exception.HResult.ToString()
+            );
+            */
 
             this.InitializeComponent();
             SuspensionManager.KnownTypes.Add(typeof(MainViewModel));
@@ -421,7 +431,7 @@ namespace BandCentral.Uwp
             try
             {
                 e.Handled = true;
-                HockeyClient.Current.TrackException(e.Exception);
+                //HockeyClient.Current.TrackException(e.Exception);
 
                 var dialog = new MessageDialog("Sorry, there has been an unexpected error. If you'd like to send a techincal summary to the app development team, click Yes.", "Unexpected Error");
 
@@ -455,7 +465,8 @@ namespace BandCentral.Uwp
             }
             catch(Exception ex)
             {
-                HockeyClient.Current.TrackException(e.Exception);
+                //HockeyClient.Current.TrackException(e.Exception);
+                Debug.WriteLine("[ex] Exception: " + ex.Message);
             }
         }
 

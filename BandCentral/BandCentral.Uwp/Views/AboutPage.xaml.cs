@@ -2,7 +2,7 @@
 // Free to use, maintain attribution to original
 // https://github.com/LanceMcCarthy/Lancelot.AwesomeBandBackgrounds
 
-using Microsoft.HockeyApp;
+//using Microsoft.HockeyApp;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -26,7 +26,7 @@ namespace BandCentral.Uwp.Views
             this.InitializeComponent();
             DataContext = App.ViewModel;
 
-            HockeyClient.Current.TrackPageView("AboutPage");
+            //HockeyClient.Current.TrackPageView("AboutPage");
 
             DisplayInformation.AutoRotationPreferences = DisplayOrientations.Portrait;
         }
@@ -37,7 +37,7 @@ namespace BandCentral.Uwp.Views
             
             var metrics = new Dictionary<string, string> { { "RatingValue", selectedRating.ToString(CultureInfo.InvariantCulture) } };
 
-            HockeyClient.Current.TrackEvent("RatingTapped", metrics);
+            //HockeyClient.Current.TrackEvent("RatingTapped", metrics);
 
             if (selectedRating >= 3)
             {
@@ -88,8 +88,10 @@ namespace BandCentral.Uwp.Views
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             //if (Microsoft.Services.Store.Engagement.Feedback.IsSupported) //breaking change
-            if (Microsoft.Services.Store.Engagement.StoreServicesFeedbackLauncher.IsSupported())
-                FeedbackHubButton.Visibility = Visibility.Visible;
+            
+            //RnD
+            //if (Microsoft.Services.Store.Engagement.StoreServicesFeedbackLauncher.IsSupported())
+            //    FeedbackHubButton.Visibility = Visibility.Visible;
 
             base.OnNavigatedTo(e);
         }
@@ -97,8 +99,10 @@ namespace BandCentral.Uwp.Views
         private async void FeedbackHubButton_Click(object sender, RoutedEventArgs e)
         {
             //await Microsoft.Services.Store.Engagement.Feedback.LaunchFeedbackAsync(); //breaking change
-            var launcher = Microsoft.Services.Store.Engagement.StoreServicesFeedbackLauncher.GetDefault();
-            await launcher.LaunchAsync();
+            
+            //RnD
+            //var launcher = Microsoft.Services.Store.Engagement.StoreServicesFeedbackLauncher.GetDefault();
+            //await launcher.LaunchAsync();
         }
 
         #endregion

@@ -10,7 +10,7 @@ using BandCentral.Uwp.ViewModels;
 using FlickrNet;
 using Lumia.Imaging;
 using Lumia.Imaging.Transforms;
-using Microsoft.HockeyApp;
+//using Microsoft.HockeyApp;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -69,7 +69,7 @@ namespace BandCentral.Uwp.Views
             this.InitializeComponent();
             DataContext = this.FlickrViewModel;
 
-            HockeyClient.Current.TrackPageView("TempSearchPage");
+            //HockeyClient.Current.TrackPageView("TempSearchPage");
 
             if (DesignMode.DesignModeEnabled)
                 return;

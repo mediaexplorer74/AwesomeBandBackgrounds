@@ -17,7 +17,7 @@ namespace BandCentral.Uwp.Views
             this.InitializeComponent();
             DataContext = App.ViewModel;
 
-            Microsoft.HockeyApp.HockeyClient.Current.TrackPageView("SettingsPage");
+            //Microsoft.HockeyApp.HockeyClient.Current.TrackPageView("SettingsPage");
 
             this.NavigationHelper = new NavigationHelper(this);
             this.NavigationHelper.LoadState += this.NavigationHelper_LoadState;

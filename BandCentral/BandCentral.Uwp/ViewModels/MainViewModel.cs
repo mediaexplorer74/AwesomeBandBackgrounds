@@ -7,7 +7,7 @@ using CommonHelpers.Common;
 using CommonHelpers.Mvvm;
 using Microsoft.Band;
 using Microsoft.Band.Notifications;
-using Microsoft.HockeyApp;
+//using Microsoft.HockeyApp;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -684,7 +684,7 @@ namespace BandCentral.Uwp.ViewModels
             }
             catch (Exception ex)
             {
-                HockeyClient.Current.TrackException(ex);
+                //HockeyClient.Current.TrackException(ex);
                 Debug.WriteLine("Favorites JSON Save Exception: {0}", ex.Message);
                 await new MessageDialog("There was a problem saving your favorites file").ShowAsync();
                 return false;
@@ -742,7 +742,7 @@ namespace BandCentral.Uwp.ViewModels
             }
             catch (Exception ex)
             {
-                HockeyClient.Current.TrackException(ex);
+                //HockeyClient.Current.TrackException(ex);
                 Debug.WriteLine("Favorites Json Load Exception: {0}", ex.Message);
                 await new MessageDialog("There was a problem loading your favorites file, memory may be corrupt or missing. ").ShowAsync();
             }
@@ -799,7 +799,7 @@ namespace BandCentral.Uwp.ViewModels
             }
             catch (Exception ex)
             {
-                HockeyClient.Current.TrackException(ex);
+                //HockeyClient.Current.TrackException(ex);
                 Debug.WriteLine($"ThemeHistory JSON Save Exception: {ex.Message}");
                 await new MessageDialog("There was a problem saving your ThemeHistory file").ShowAsync();
             }
@@ -860,7 +860,7 @@ namespace BandCentral.Uwp.ViewModels
             }
             catch (Exception ex)
             {
-                HockeyClient.Current.TrackException(ex);
+                //HockeyClient.Current.TrackException(ex);
                 Debug.WriteLine("Favorites ThemeHistory Load Exception: {0}", ex.Message);
                 await new MessageDialog("There was a problem loading your ThemeHistory file").ShowAsync();
                 return list;
@@ -882,7 +882,7 @@ namespace BandCentral.Uwp.ViewModels
                 IsBusy = true;
                 IsBusyMessage = "backing up favorites...";
 
-                HockeyClient.Current.TrackEvent("FavoritesBackedUp");
+                //HockeyClient.Current.TrackEvent("FavoritesBackedUp");
 
                 var file = await roamingFolder.CreateFileAsync(FlickrConstants.FlickrFavoritesBackupFileName, CreationCollisionOption.ReplaceExisting);
 
@@ -920,7 +920,7 @@ namespace BandCentral.Uwp.ViewModels
             }
             catch (Exception ex)
             {
-                HockeyClient.Current.TrackException(ex);
+                //HockeyClient.Current.TrackException(ex);
                 Debug.WriteLine("ROAMING Favorites JSON Save Exception: {0}", ex.Message);
                 await new MessageDialog("There was a problem saving your synced backup favorites file").ShowAsync();
                 return false;
@@ -986,7 +986,7 @@ namespace BandCentral.Uwp.ViewModels
             }
             catch (Exception ex)
             {
-                HockeyClient.Current.TrackException(ex);
+                //HockeyClient.Current.TrackException(ex);
                 Debug.WriteLine("ROAMING Favorites Json Load Exception: {0}", ex.Message);
                 await
                     new MessageDialog(
@@ -1058,7 +1058,7 @@ namespace BandCentral.Uwp.ViewModels
             }
             catch (Exception ex)
             {
-                HockeyClient.Current.TrackException(ex);
+                //HockeyClient.Current.TrackException(ex);
                 return false;
             }
             finally
@@ -1099,7 +1099,7 @@ namespace BandCentral.Uwp.ViewModels
             }
             catch (Exception ex)
             {
-                HockeyClient.Current.TrackException(ex);
+                //HockeyClient.Current.TrackException(ex);
                 await new MessageDialog("Something went wrong resuming Band connection, restarting the app will fix this. \r\n\nError Details: " + ex.Message).ShowAsync();
                 return IsBandConnected = false;
             }
@@ -1181,7 +1181,7 @@ namespace BandCentral.Uwp.ViewModels
             }
             catch (BandException ex)
             {
-                HockeyClient.Current.TrackException(ex);
+                //HockeyClient.Current.TrackException(ex);
                 await BandConnectionHelper.BandExceptionMessageDialog(ex, "InitializeBandInformationAsync").ShowAsync();
                 //var message = $"This error can occur for several different reasons, check to make sure your Band:" +
                 //              "\r\n\n-Is powered on" +
@@ -1195,7 +1195,7 @@ namespace BandCentral.Uwp.ViewModels
             }
             catch (Exception ex)
             {
-                HockeyClient.Current.TrackException(ex);
+                //HockeyClient.Current.TrackException(ex);
                 Debug.WriteLine("InitializeBandInformationAsync() Exception: {0}", ex.Message);
                 await new MessageDialog($"InitializeBandInformationAsync() Exception:\r\n\nError Details: {ex.Message}").ShowAsync();
             }
@@ -1257,7 +1257,7 @@ namespace BandCentral.Uwp.ViewModels
             }
             catch (Exception ex)
             {
-                HockeyClient.Current.TrackException(ex);
+                //HockeyClient.Current.TrackException(ex);
                 await new MessageDialog("Error getting Band specifications: " + ex.Message).ShowAsync();
             }
             finally
@@ -1292,7 +1292,7 @@ namespace BandCentral.Uwp.ViewModels
             }
             catch (BandException ex)
             {
-                HockeyClient.Current.TrackException(ex);
+                //HockeyClient.Current.TrackException(ex);
 
                 await BandConnectionHelper.BandExceptionMessageDialog(ex, "SetMeTileAsync").ShowAsync();
 
@@ -1307,7 +1307,7 @@ namespace BandCentral.Uwp.ViewModels
             }
             catch (Exception ex)
             {
-                HockeyClient.Current.TrackException(ex);
+                //HockeyClient.Current.TrackException(ex);
                 await new MessageDialog("Set Current Me Tile Exception: " + ex.Message).ShowAsync();
             }
             finally
@@ -1347,7 +1347,7 @@ namespace BandCentral.Uwp.ViewModels
             }
             catch (BandException ex)
             {
-                HockeyClient.Current.TrackException(ex);
+                //HockeyClient.Current.TrackException(ex);
                 await BandConnectionHelper.BandExceptionMessageDialog(ex, "GetMeTileAsync").ShowAsync();
                 //await new MessageDialog($"GetMeTileAsync() Error connecting to Band, make sure it is:" +
                 //                        $"\r\n-Powered ON" +
@@ -1360,7 +1360,7 @@ namespace BandCentral.Uwp.ViewModels
             }
             catch (Exception ex)
             {
-                HockeyClient.Current.TrackException(ex);
+                //HockeyClient.Current.TrackException(ex);
                 await new MessageDialog($"Get Background error. If this continues to happen after you've set a new background image, please contact support./r/n/nError: {ex.Message}").ShowAsync();
                 return null;
             }
@@ -1405,7 +1405,7 @@ namespace BandCentral.Uwp.ViewModels
             }
             catch (BandException ex)
             {
-                HockeyClient.Current.TrackException(ex);
+                //HockeyClient.Current.TrackException(ex);
                 await BandConnectionHelper.BandExceptionMessageDialog(ex, "GetBandThemeAsync").ShowAsync();
                 //await new MessageDialog($"GetBandThemeAsync() Error connecting to Band, make sure it is:" +
                 //                        $"\r\n-Powered ON" +
@@ -1418,7 +1418,7 @@ namespace BandCentral.Uwp.ViewModels
             }
             catch (Exception ex)
             {
-                HockeyClient.Current.TrackException(ex);
+                //HockeyClient.Current.TrackException(ex);
                 await new MessageDialog("Exception getting Band theme: " + ex.Message).ShowAsync();
                 return false;
             }
@@ -1481,7 +1481,7 @@ namespace BandCentral.Uwp.ViewModels
             }
             catch (BandException ex)
             {
-                HockeyClient.Current.TrackException(ex);
+                //HockeyClient.Current.TrackException(ex);
                 await new MessageDialog($"SetBandThemeAsync() Error connecting to Band, make sure it is:" +
                                         $"\r\n-Powered ON" +
                                         $"\r\n-Is within range" +
@@ -1493,7 +1493,7 @@ namespace BandCentral.Uwp.ViewModels
             }
             catch (Exception ex)
             {
-                HockeyClient.Current.TrackException(ex);
+                //HockeyClient.Current.TrackException(ex);
                 await new MessageDialog($"MainViewModel -> SetBandThemeAsync() Exception \r\n\nMessage: {ex.Message}").ShowAsync();
                 return false;
             }
