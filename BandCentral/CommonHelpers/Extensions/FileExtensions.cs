@@ -11,7 +11,8 @@ namespace CommonHelpers.Extensions
         static FileExtensions()
         {
             // Gets the target platform's valid save location
-            LocalFolder = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+            //RnD
+            LocalFolder = "";//Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
         }
 
         // Byte[] extension methods

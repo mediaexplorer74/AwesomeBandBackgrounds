@@ -8,9 +8,11 @@ The ultimate Microsoft Band companion app. Access millions of amazing, high defi
 ![Desktop](Images/shot1.png)
 
 ## Status
-- Reverse Engeneering +-
-- Planning to transform dll-depandent code to real multi-platform (W10 / W10M; PC / Mobile) +-
+- Reverse Engeneering +
+- Reducing dll-depandent code to real multi-platform (W10 / W10M; PC / Mobile) +
+- Min. Win. os. build = 15063 +
 - Dev +- 
+- Intro -
 
 ## Installation Options
 - [Microsoft Store](https://www.microsoft.com/en-us/p/awesome-band-backgrounds/9nblggh3g0sn)

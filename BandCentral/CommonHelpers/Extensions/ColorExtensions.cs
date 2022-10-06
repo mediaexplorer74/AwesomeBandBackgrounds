@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
+//using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using CommonHelpers.Common;
+using Windows.UI;
 
 namespace CommonHelpers.Extensions
 {
@@ -19,7 +20,7 @@ namespace CommonHelpers.Extensions
             hex = hex.Remove(0, 1);
 
             return Color.FromArgb(
-                hex.Length == 8 ? byte.Parse(hex.Substring(0, 2), NumberStyles.HexNumber) : 255, 
+                hex.Length == (byte)8 ? (byte)byte.Parse(hex.Substring(0, 2), NumberStyles.HexNumber) : (byte)255, 
                 byte.Parse(hex.Substring(hex.Length - 6, 2), NumberStyles.HexNumber), 
                 byte.Parse(hex.Substring(hex.Length - 4, 2), NumberStyles.HexNumber), 
                 byte.Parse(hex.Substring(hex.Length - 2), NumberStyles.HexNumber));
@@ -108,7 +109,8 @@ namespace CommonHelpers.Extensions
                     Hue = (baseHue + step * i) % 240.0
                 };
 
-                colors.Add((System.Drawing.Color)nextColor);
+                //colors.Add((System.Drawing.Color)nextColor);
+                colors.Add((Windows.UI.Color)nextColor);
             }
 
             return colors;
@@ -121,7 +123,7 @@ namespace CommonHelpers.Extensions
         /// <returns>Contrast color</returns>
         public static Color GetContrastColor(this Color c)
         {
-            return c.R * 0.3 + c.G * 0.59 + c.B * 0.11 > 127 ? Color.Black : Color.White;
+            return c.R * 0.3 + c.G * 0.59 + c.B * 0.11 > 127 ? Windows.UI.Color.FromArgb(1,0,0,0) : Windows.UI.Color.FromArgb(1, 255, 255, 255);
         }
     }
 }

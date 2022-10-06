@@ -1,6 +1,7 @@
 ﻿using System;
-using System.Drawing;
+//using System.Drawing;
 using CommonHelpers.Extensions;
+using Windows.UI;
 
 // Modernized from the original version
 // Original Credit - Rich Newman: https://richnewman.wordpress.com/about/code-listings-and-diagrams/hslcolor-class/
@@ -79,7 +80,7 @@ namespace CommonHelpers.Common
         // ReSharper disable once InconsistentNaming
         public void SetRGB(int red, int green, int blue)
         {
-            var hslColor = (HSLColor)Color.FromArgb(red, green, blue);
+            var hslColor = (HSLColor)Color.FromArgb(1, (byte)red, (byte)green, (byte)blue);
 
             hue = hslColor.hue;
             saturation = hslColor.saturation;
@@ -109,7 +110,7 @@ namespace CommonHelpers.Common
                 }
             }
 
-            return Color.FromArgb((int)(255 * r), (int)(255 * g), (int)(255 * b));
+            return Color.FromArgb((byte)1,(byte)(255 * r), (byte)(255 * g), (byte)(255 * b));
         }
 
         private static double GetColorComponent(double temp1, double temp2, double temp3)
@@ -168,9 +169,9 @@ namespace CommonHelpers.Common
         {
             return new HSLColor
             {
-                hue = color.GetHue() / 360.0,
-                luminosity = color.GetBrightness(),
-                saturation = color.GetSaturation()
+                hue = 1,//color.GetHue() / 360.0,
+                luminosity = 1,//color.GetBrightness(),
+                saturation = 1,//color.GetSaturation()
             };
         }
 

@@ -7,9 +7,12 @@ namespace FlickrNet
     /// <summary>
     /// Summary description for SafeNativeMethods.
     /// </summary>
+    /// 
+/*
 #if !WindowsCE && !SILVERLIGHT && !NETFX_CORE
     [SuppressUnmanagedCodeSecurity]
 #endif
+*/
     internal class SafeNativeMethods
     {
         private SafeNativeMethods()
