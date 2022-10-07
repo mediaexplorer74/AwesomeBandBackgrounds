@@ -5,14 +5,15 @@ Echo / fork of 10-years [AwesomeBandBackgrounds](https://github.com/LanceMcCarth
 The ultimate Microsoft Band companion app. Access millions of amazing, high definition wallpaper photos and dozens of professional palette-based themes.
 
 ## Screenshots
-![Desktop](Images/shot1.png)
+![Bing BG choosing](Images/shot1.png)
+![Bing BG updating](Images/shot2.png)
+![Bing BG installed](Images/shot3.png)
 
 ## Status
-- Reverse Engeneering +
-- Reducing dll-depandent code to real multi-platform (W10 / W10M; PC / Mobile) +
-- Min. Win. os. build = 15063 +
-- Dev +- 
-- Intro -
+- Reverse Engeneering completed. Dll Flickr dll lib analogs found.
+- The code refactored a little to support the real "UWP multi-platform" (W10 / W10M; PC / Mobile). 
+- The funcionality reduction ("app simplify") started to plan.  
+- Min. Win. os. build 15063 at now; background tasks disabled (re-dev not ready yet)
 
 ## Installation Options
 - [Microsoft Store](https://www.microsoft.com/en-us/p/awesome-band-backgrounds/9nblggh3g0sn)
