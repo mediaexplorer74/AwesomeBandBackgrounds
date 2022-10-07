@@ -8,6 +8,7 @@ The ultimate Microsoft Band companion app. Access millions of amazing, high defi
 ![Bing BG choosing](Images/shot1.png)
 ![Bing BG updating](Images/shot2.png)
 ![Bing BG installed](Images/shot3.png)
+![Flickr BG choosing at Desktop](Images/shot4.png)
 
 ## Status
 - Reverse Engeneering completed. Dll Flickr dll lib analogs found.
